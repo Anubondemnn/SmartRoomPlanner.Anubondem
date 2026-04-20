@@ -16,4 +16,4 @@ Before building a project, I planned to code for 72 days. I was inconsistent, bu
 
 ## How to Run
 python main.py
-Credits & Lead Project Owner/Creator - Anubondem (Anu) N
+- Credits & Lead Project Owner/Creator - Anubondem (Anu) N
