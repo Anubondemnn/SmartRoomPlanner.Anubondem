@@ -54,10 +54,7 @@ elif percent_used >= 70:
     print("Room is getting crowded.")
 else:
     print("Room has plenty of space.")
-
-if furniture_list:
-    largest = max(furniture_list, key=lambda x: x["area"])
-    print(f"Largest item: {largest['name']} ({largest['area']} sq ft)")
+print(f"#{item['name']} has {item['area']} sq ft")
 
 #new code
 grid_width = int(room_width)
@@ -70,8 +67,8 @@ for i in range(grid_length):
     room_grid.append(row)
 
 area = length * width
-x = int(input ("Enter X position:"))
-y = int(input ("Enter Y position:"))
+x = int(input("Enter X position (number, e.g., 0–10): "))
+y = int(input("Enter Y position (number, e.g., 0–10): "))
 
 size_x = int(input("Enter furniture width in grid units (e.g., 2): "))
 size_y = int(input("Enter furniture height in grid units (e.g., 2): "))
@@ -99,19 +96,20 @@ if can_place:
     for i in range(size_y):
         for j in range(size_x):
             room_grid[y+i][x+j] = f"[{name[0].upper()}]"
+
+    furniture_list.append(furniture)
 else:
     print("Cannot place furniture here (out of bounds or overlapping).")
-
-print("\nRoom Layout:\n")
 
 # X-axis
 print("   ", end="")
 for col in range(grid_width):
     print(f"{col:3}", end="")
 print()
-
+print("Try a different position inside the grid.")
 # Grid with Y-axis
 for i, row in enumerate(room_grid):
     print(f"{i:2} ", end="")
     for cell in row:
         print(cell, end="")
+print()
